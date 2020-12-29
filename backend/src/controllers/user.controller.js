@@ -1,4 +1,3 @@
-
 /** Models that are used. */
 import User from '../models/User';
 
@@ -6,19 +5,17 @@ import User from '../models/User';
 export const getUsers = async (req, res, next) => {
     try {
         let users = await User.find();
-        res.json(users);
-
+        res.status(200).json(users);
     } catch (error) {
 
     }
 }
 
-/** Get one specific user information by ID. */
+/** Get one specific user information by its ID. */
 export const getUserById = async (req, res, next) => {
     try {
         let user = await User.findById(req.params.id);
-        res.json(user);
-
+        res.status(200).json(user);
     } catch (error) {
 
     }
@@ -29,8 +26,8 @@ export const createUser = async (req, res, next) => {
     try {
         let { name, lastName, email, password } = req.body;
         let newUser = new User({ name, lastName, email, password });
-        await newUser.save();
-        res.json({ message: "User created" });
+        let userSaved = await newUser.save();
+        res.json(userSaved);
     } catch (error) {
 
     }
@@ -39,8 +36,8 @@ export const createUser = async (req, res, next) => {
 /** Update user information. */
 export const updateUserById = async (req, res, next) => {
     try {
-        await User.findOneAndUpdate(req.params.id, req.body);
-        res.json({ message: "User updated" });
+        let userUpdated = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        res.status(200).json(userUpdated);
     } catch (error) {
 
     }
@@ -49,8 +46,9 @@ export const updateUserById = async (req, res, next) => {
 /** Delete user from DB. */
 export const deleteUserById = async (req, res, next) => {
     try {
-        await User.findByIdAndDelete(req.params.id);
-        res.json({ message: "User deleted" });
+        let id = req.params.id;
+        await User.findByIdAndDelete(id);
+        res.status(204).json({ message: "User deleted" });
     } catch (error) {
 
     }
