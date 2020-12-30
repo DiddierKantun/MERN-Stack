@@ -15,4 +15,4 @@ router.put('/:id', userController.updateUserById);
 /** DELETE: api/user/{id} */
 router.delete('/:id', userController.deleteUserById);
 
-module.exports = router;
+export default router;

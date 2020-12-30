@@ -1,22 +1,24 @@
 import express  from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
+import path from 'path';
 
-// route list
-const userRoute = require('./routes/user.routes');
+// Route list
+import userRoute from './routes/user.routes';
+import authRoute from './routes/auth.routes';
 
 const app = express();
 
-app.use(morgan('dev'))
+// Static folders
+app.use(express.static(path.join(__dirname, 'public')));
 
-// settings
-app.set('port',process.env.PORT || 4000);
-
-// middlewares
+// Middlewares
 app.use(cors());
+app.use(morgan('dev'));
 app.use(express.json());
 
-// routes
+// Routes URL
 app.use('/api/user', userRoute);
+app.use('/api/auth', authRoute);
 
 export default app;
