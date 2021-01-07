@@ -5,7 +5,7 @@ import * as security from "../libs/security";
 export const singIn = async (req, res, next) => {
     try {
         // validate email
-        const userFound = await User.findOne({ email: req.body.email });
+        const userFound = await (await User.findOne({ email: req.body.email })).populated("role");
         if (!userFound) return res.status(400).json({ message: "user not found" });
         // validate password
         const matchPassword = await security.comparePassword(req.body.password, userFound.password);
@@ -20,6 +20,7 @@ export const singIn = async (req, res, next) => {
     }
 }
 
+/** Create a new user account. */
 export const singUp = async (req, res, next) => {
     
 }

@@ -2,14 +2,14 @@ import express  from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import path from 'path';
-import { createRoles } from "./libs/initialSetup";
+import * as lib from "./libs/initialSetup";
 
 // Route list
 import userRoute from './routes/user.routes';
 import authRoute from './routes/auth.routes';
 
 const app = express();
-createRoles();
+lib.createRoles();
 
 // Static folders
 app.use(express.static(path.join(__dirname, 'public')));
