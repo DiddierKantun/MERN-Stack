@@ -19,13 +19,13 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
-    roles: [{
-        ref: 'Role',
+    role: {
+        ref: "Role",
         type: Schema.Types.ObjectId
-    }]
+    }
 }, {
     timestamps:true,
     versionKey: false
 });
 
-export default model('User', userSchema);
+export default model("User", userSchema);
