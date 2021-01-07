@@ -5,8 +5,9 @@ import path from 'path';
 import * as lib from "./libs/initialSetup";
 
 // Route list
-import userRoute from './routes/user.routes';
 import authRoute from './routes/auth.routes';
+import userRoute from './routes/user.routes';
+import productRoute from './routes/product.routes';
 
 const app = express();
 lib.createRoles();
@@ -21,7 +22,8 @@ app.use(express.json()); // read json information
 app.use(express.urlencoded({ extended: false })); // understand HTML petitions
 
 // Routes URL
-app.use('/api/user', userRoute);
 app.use('/api/auth', authRoute);
+app.use('/api/user', userRoute);
+app.use('/api/product', productRoute);
 
 export default app;
