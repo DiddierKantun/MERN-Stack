@@ -1,4 +1,3 @@
-import 'dotenv/config';
 import '../database/connection';
 import app from '../app';
 import http from 'http';
@@ -12,7 +11,7 @@ const server = http.createServer(app);
 
 async function start() {
     await server.listen(app.get('port'));
-    console.log('Listening on port ' + port);
+    console.log(`Listening on port ${port}`);
 }
 
 start();

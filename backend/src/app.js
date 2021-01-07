@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 app.use(morgan('dev')); // show details of petition
 app.use(express.json()); // read json information
-APP.use(express.urlencoded({ extended: false })); // understand HTML petitions
+app.use(express.urlencoded({ extended: false })); // understand HTML petitions
 
 // Routes URL
 app.use('/api/user', userRoute);

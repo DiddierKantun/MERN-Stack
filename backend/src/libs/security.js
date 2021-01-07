@@ -1,5 +1,6 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import config from "../config/config";
 
 /** Method to encrypt password */
 export const encryptPassword = async (password) => {   
@@ -14,7 +15,7 @@ export const comparePassword = async (password, passwordReceived) => {
 
 /** Method to generate a user token */
 export const generateToken = (id) => {
-    const token = jwt.sign({ id: id }, process.env.SECRET,{
+    const token = jwt.sign({ id: id }, config.secret,{
         expiresIn: 86400 // 24 hours
     });
     return token;
