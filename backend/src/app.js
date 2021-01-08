@@ -8,6 +8,7 @@ import * as lib from "./libs/initialSetup";
 import authRoute from './routes/auth.routes';
 import userRoute from './routes/user.routes';
 import productRoute from './routes/product.routes';
+import categoryRoute from './routes/category.routes';
 
 const app = express();
 lib.createRoles();
@@ -25,5 +26,6 @@ app.use(express.urlencoded({ extended: false })); // understand HTML petitions
 app.use('/api/auth', authRoute);
 app.use('/api/user', userRoute);
 app.use('/api/product', productRoute);
+app.use('/api/category', categoryRoute);
 
 export default app;
