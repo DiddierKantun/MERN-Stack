@@ -1,16 +1,16 @@
 
 # MERN-Stack
 
-_Example of imple CRUD using API REST to connect the backend to frondend_
+_Example of a simple CRUD using API REST to connect the backend to frondend_
 
 ### Requirements 📋
 
-* _Having installed [MongoDB](https://www.mongodb.com/try/download/community) _
-* _Having installed [Node.js](https://nodejs.org/en/) _
+* Having installed [MongoDB](https://www.mongodb.com/try/download/community) 
+* Having installed [Node.js](https://nodejs.org/en/) 
 
 ## Installation
 
-Use the package manager [npm](https://pip.pypa.io/en/stable/) to install all the libraries.
+Use the package manager ```npm``` to install all the libraries.
 
 ```bash
 npm install
@@ -22,6 +22,7 @@ npm install
 * [Express.js](http://expressjs.com/) - Dependencies manager
 * [React.js](https://reactjs.org/docs/getting-started.html) - Dependencies manager
 * [Node.js](https://nodejs.org/es/docs/) - Dependencies manager
+* [Babel](https://babeljs.io/docs/en/babel-node) - Toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments.
 
 ### Tests ⌨️
 
