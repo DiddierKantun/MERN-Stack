@@ -3,7 +3,7 @@
 
 _Example of a simple CRUD using API REST to connect the backend to frondend_
 
-### Requirements 📋
+### Requirements
 
 * Having installed [MongoDB](https://www.mongodb.com/try/download/community) 
 * Having installed [Node.js](https://nodejs.org/en/) 
@@ -16,7 +16,7 @@ Use the package manager ```npm``` to install all the libraries.
 npm install
 ```
 
-## Build with 🛠️
+## Build with
 
 * [MongoDB](https://docs.mongodb.com/) - Database
 * [Express.js](http://expressjs.com/) - Dependencies manager
@@ -24,7 +24,7 @@ npm install
 * [Node.js](https://nodejs.org/es/docs/) - Dependencies manager
 * [Babel](https://babeljs.io/docs/en/babel-node) - Toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments.
 
-### Tests ⌨️
+### Tests
 
 _Run the project in developer mode_
 
@@ -42,6 +42,6 @@ _Run the project in production mode_
 npm run start
 ```
 
-## Author ✒️
+## Author
 
 * **Diddier Kantun** - *Development and documentation* - [DiddierKantun](https://github.com/DiddierKantun)
