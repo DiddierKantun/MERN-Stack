@@ -1,6 +1,10 @@
 import { Schema, model } from 'mongoose';
 
 const ProductSchema = new Schema({
+    active: {
+        type: Boolean,
+        required: true
+    },
     name: {
         type: String,
         required: true,
@@ -11,6 +15,10 @@ const ProductSchema = new Schema({
         required: true,
         trim: true
     },
+    quantity: {
+        type: Number,
+        required: true
+    },
     categories: [{
         ref: "Category",
         type: Schema.Types.ObjectId
@@ -19,15 +27,19 @@ const ProductSchema = new Schema({
         type: Number,
         required: true
     },
+    mainpicture: {
+        source:{
+            type: String,
+            required: true
+        }
+    },
     images: [{
-        location: {
+        source: {
             type: String,
             required: true
         },
-        main: {
-            type: Boolean,
-            required: true,
-            default: false
+        order: {
+            type: Number
         }
     }],
     comments: [{ 

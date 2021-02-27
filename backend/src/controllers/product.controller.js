@@ -32,12 +32,15 @@ export const getProductById = async (req, res, next) => {
 /** Create a new product in DB. */
 export const createProduct = async (req, res, next) => {
     try {
-        const { name, description, categories, price, images } = req.body;
+        const { active, name, description, quantity, categories, price, mainpicture, images } = req.body;
         const newProduct = new Product({
+            active,
             name,
             description,
+            quantity,
             categories,
             price,
+            mainpicture,
             images
         });
         // validate category
