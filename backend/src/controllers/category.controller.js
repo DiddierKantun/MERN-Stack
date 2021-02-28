@@ -54,7 +54,7 @@ export const updateCategoryById = async (req, res, next) => {
 
         if (!categoryUpdated) return res.status(400).json({ message: `Category with id ${id} does not exist` });
 
-        res.status(200).json(userUpdated);
+        res.status(200).json(categoryUpdated);
     } catch (error) {
         res.status(500).json({
             message: error.message || "something goes wrong."
@@ -68,9 +68,9 @@ export const deleteCategoryById = async (req, res, next) => {
     try {
         const categoryDeleted = await User.findByIdAndDelete(req.params.id);
 
-        if (!categoryDeleted) return res.status(400).json({ message: `User with id ${id} does not exist` });
+        if (!categoryDeleted) return res.status(400).json({ message: `Category with id ${id} does not exist` });
 
-        res.status(204).json(userDeleted);
+        res.status(204).json(categoryDeleted);
     } catch (error) {
         res.status(500).json({
             message: error.message || "something goes wrong."
