@@ -35,8 +35,7 @@ const ProductSchema = new Schema({
     },
     images: [{
         source: {
-            type: String,
-            required: true
+            type: String
         },
         order: {
             type: Number
@@ -45,7 +44,6 @@ const ProductSchema = new Schema({
     comments: [{ 
         comment: {
             type: String,
-            required: true,
             trim: true
         },
         date: {
